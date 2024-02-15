@@ -22,7 +22,7 @@ meaningful effects.}
 For \code{effect}, a \code{character} string with the three hexadecimal
 digit effect code will be returned.
 
-For \code{effect<-}, a copy of object \code{x} with effect code \code{value}
+For \verb{effect<-}, a copy of object \code{x} with effect code \code{value}
 will be returned.
 }
 \description{
@@ -43,7 +43,7 @@ also affect the module tempo or cause position jumps.
 When replacing this code, all three digit hexadecimal \code{character}
 strings are accepted, although not all codes will represent a valid
 effect or trigger. See
-\url{http://coppershade.org/articles/More!/Topics/Protracker_Effect_Commands/}
+\url{https://wiki.openmpt.org/Manual:_Effect_Reference#MOD_Effect_Commands}
 for a valid list of effect codes.
 }
 \examples{

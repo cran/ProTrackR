@@ -1,3 +1,9 @@
+ProTrackR v0.4.3 (Release date: 2023-02-15)
+=============
+
+ * Added `pkgdown` website and README
+ * switched to RMarkdown mode for roxygen2 documentation
+
 ProTrackR v0.3.8 (Release date: 2023-08-22)
 =============
 

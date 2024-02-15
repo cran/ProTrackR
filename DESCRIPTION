@@ -1,11 +1,13 @@
 Package: ProTrackR
 Type: Package
 Title: Manipulate and Play 'ProTracker' Modules
-Version: 0.3.8
-Date: 2023-08-22
-Authors@R: c(person("Pepijn", "de Vries", role =c("aut", "cre", "dtc"),
-    email = "pepijn.devries@outlook.com"))
+Version: 0.4.3
+Date: 2024-02-15
+Authors@R: c(person("Pepijn", "de Vries", role = c("aut", "cre", "dtc"),
+    email = "pepijn.devries@outlook.com",
+    comment = c(ORCID = "0000-0002-7961-6646")))
 Author: Pepijn de Vries [aut, cre, dtc]
+    (<https://orcid.org/0000-0002-7961-6646>)
 Maintainer: Pepijn de Vries <pepijn.devries@outlook.com>
 Description: 'ProTracker' is a popular music tracker to sequence
     music on a Commodore Amiga machine. This package offers the
@@ -15,7 +17,7 @@ Description: 'ProTracker' is a popular music tracker to sequence
     intends to contribute to this popularity and therewith
     keeping the legacy of 'ProTracker' and the Commodore Amiga
     alive.
-License: GPL-3
+License: GPL (>= 3)
 LazyData: True
 Depends: audio, lattice, signal, tuneR (>= 1.0)
 Imports: graphics, methods, stats, utils, XML
@@ -23,6 +25,9 @@ Suggests: AmigaFFH (>= 0.2.0)
 Encoding: UTF-8
 RoxygenNote: 7.2.3
 NeedsCompilation: no
-Packaged: 2023-08-22 16:06:09 UTC; vries171
+URL: https://pepijn-devries.github.io/ProTrackR/,
+        https://github.com/pepijn-devries/ProTrackR/
+BugReports: https://github.com/pepijn-devries/ProTrackR/issues
+Packaged: 2024-02-15 08:34:44 UTC; vries171
 Repository: CRAN
-Date/Publication: 2023-08-23 00:10:16 UTC
+Date/Publication: 2024-02-15 12:00:05 UTC
