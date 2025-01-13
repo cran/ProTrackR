@@ -1,8 +1,7 @@
 Package: ProTrackR
 Type: Package
 Title: Manipulate and Play 'ProTracker' Modules
-Version: 0.4.3
-Date: 2024-02-15
+Version: 0.4.4
 Authors@R: c(person("Pepijn", "de Vries", role = c("aut", "cre", "dtc"),
     email = "pepijn.devries@outlook.com",
     comment = c(ORCID = "0000-0002-7961-6646")))
@@ -20,7 +19,7 @@ Description: 'ProTracker' is a popular music tracker to sequence
 License: GPL (>= 3)
 LazyData: True
 Depends: audio, lattice, signal, tuneR (>= 1.0)
-Imports: graphics, methods, stats, utils, XML
+Imports: graphics, methods, stats, utils
 Suggests: AmigaFFH (>= 0.2.0)
 Encoding: UTF-8
 RoxygenNote: 7.2.3
@@ -28,6 +27,7 @@ NeedsCompilation: no
 URL: https://pepijn-devries.github.io/ProTrackR/,
         https://github.com/pepijn-devries/ProTrackR/
 BugReports: https://github.com/pepijn-devries/ProTrackR/issues
-Packaged: 2024-02-15 08:34:44 UTC; vries171
+Language: en-US
+Packaged: 2025-01-12 17:07:15 UTC; vries171
 Repository: CRAN
-Date/Publication: 2024-02-15 12:00:05 UTC
+Date/Publication: 2025-01-13 14:10:19 UTC

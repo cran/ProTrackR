@@ -6,7 +6,7 @@
 \alias{fix.PTModule,PTModule,missing-method}
 \title{Attempt to fix PTModule to ProTracker specs}
 \usage{
-\S4method{fix.PTModule}{PTModule,logical}(mod, verbose = T)
+\S4method{fix.PTModule}{PTModule,logical}(mod, verbose = TRUE)
 
 \S4method{fix.PTModule}{PTModule,missing}(mod)
 }
@@ -18,7 +18,7 @@ prints a progress report to the \code{\link{sink}}. When set
 to \code{FALSE}, the progress report is suppressed.}
 }
 \value{
-Returns a copy of object \code{mod} in which all non-conformaties are
+Returns a copy of object \code{mod} in which all non-conformities are
 attempted to be fixed. (Attempted) fixes are listed printed
 in the progress report.
 }
@@ -29,7 +29,7 @@ ProTracker specs such that they pass validity tests.
 \details{
 Almost any file can be read as a \code{\link{PTModule}} object (using
 \code{\link{read.module}}) when validity is ignored and no unexpected end
-of file is reached. This package's object validity are very strickly testing
+of file is reached. This package's object validity are very strictly testing
 for compliance with ProTracker specifications. As many modules could have
 been created with other trackers (which often will play just as well in
 ProTracker) it is desirable to convert such object to ProTracker specs.
@@ -39,10 +39,9 @@ and `fixed' modules may not play as intended.
 }
 \note{
 In the current version, pattern data itself is not checked for
-non-conformaties nor is it fixed.
+non-conformities nor is it fixed.
 }
 \examples{
-\dontrun{
 data("mod.intro")
 
 ## Let's do something illegal and destroy mod.intro:
@@ -57,8 +56,7 @@ validObject(mod.intro, TRUE)
 mod.intro <- fix.PTModule(mod.intro)
 
 ## See, it's all OK again:
-validObject(mod.intro, TRUE)
-}
+validObject(mod.intro, FALSE)
 }
 \seealso{
 Other module.operations: 

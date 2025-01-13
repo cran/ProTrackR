@@ -1,27 +1,27 @@
 validity.PTTrack <- function(object)
 {
   # Data should consist of a raw maximumPatternTableRowCount x 4 matrix
-  if (!all(dim(object@data) == c(maximumPatternTableRowCount, 4))) return (F)
+  if (!all(dim(object@data) == c(maximumPatternTableRowCount, 4))) return (FALSE)
   # Data in matrix should be of type raw
-  if (typeof(object@data) != "raw") return (F)
+  if (typeof(object@data) != "raw") return (FALSE)
   # All cell data should also be OK
 
   # max. 32 samples (including number 0) allowed:
   samp.num <- hiNybble(object@data[,1])*0x01 + hiNybble(object@data[,3])
-  if (any(samp.num > 0x1F)) return (F)
+  if (any(samp.num > 0x1F)) return (FALSE)
 
   per      <- loNybble(object@data[,1])*0x100 + as.integer(object@data[,2])
   oct      <- octave(per)
 
   # only octaves 1 up to 3 are allowed:
-  if (any(!(oct[per != 0] %in% c(1:3)))) return (F)
+  if (any(!(oct[per != 0] %in% c(1:3)))) return (FALSE)
 
   # only period values from period_table are allowed:
   if (any(!(per[per != 0] %in% unlist(ProTrackR::period_table[ProTrackR::period_table$tuning == 0,
                                                               !(names(ProTrackR::period_table) %in% c("octave", "tuning"))]))))
-    return (F)
+    return (FALSE)
 
-  return(T)
+  return(TRUE)
 }
 
 #' The PTTrack class
@@ -34,7 +34,7 @@ validity.PTTrack <- function(object)
 #' channels. Two channels (2 and 3) were hardware-mixed fully to the right stereo
 #' outputs and the other two (1 and 4) fully to the left stereo outputs.
 #'
-#' This class represents such a single channel, reffered to as a track. A [`PTPattern`] is
+#' This class represents such a single channel, referred to as a track. A [`PTPattern`] is
 #' composed of four such channels. As a ProTracker pattern consists of 64 rows,
 #' a `PTTrack` object is also (implicitly) composed of 64
 #' [`PTCell`] objects.
@@ -43,10 +43,10 @@ validity.PTTrack <- function(object)
 #' `PTTrack-class` object, or to replace such an object.
 #'
 #' @slot data A `matrix` (64 rows, 4 columns) of class `raw`.
-#' Each row implicetely represents a [`PTCell`] object, where
+#' Each row implicitly represents a [`PTCell`] object, where
 #' the raw data is formatted as specified at the [`PTCell-class`]
 #' documentation. Use the [`PTCell-method`] to make an element of
-#' a `PTTrack` object explictly of class [`PTCell`].
+#' a `PTTrack` object explicitly of class [`PTCell`].
 #' Row numbers correspond with the row numbers of [`PTPattern`]
 #' objects.
 #' @name PTTrack-class
@@ -80,7 +80,7 @@ setClass("PTTrack",
          representation(data = "matrix"),
          prototype(data = matrix(rep(as.raw(new("PTCell")),
                                      maximumPatternTableRowCount),
-                                 nrow = maximumPatternTableRowCount, byrow = T)),
+                                 nrow = maximumPatternTableRowCount, byrow = TRUE)),
          validity = validity.PTTrack)
 
 #' @rdname as.character
